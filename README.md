@@ -22,5 +22,5 @@ sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_per
 ______________________________
 # Fix missing acme-challenge context on all vhosts config
 ```
-sh <(curl [https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh](https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh) || wget -O - [https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh](https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh))
+sh <(curl [https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh](https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh) || wget -O - [https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh](https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh)
 ```
