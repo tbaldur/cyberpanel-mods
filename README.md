@@ -10,16 +10,6 @@ sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/phpmod.
 ![](https://community.cyberpanel.net/uploads/default/original/2X/0/00feaa708386036ce807b7d7b67c57230f2dfe45.png)
 
 ______________________________
-# ALPHA! NEEDS PROPER TESTING
-
-## Cyberpanel core permissions fix
-
-Run in case you messed your cyberpanel permissions. 
-```
-sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh)
-```
-
-______________________________
 # Fix missing acme-challenge context on all vhosts config
 ```
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh)
@@ -31,4 +21,21 @@ _____________________________
 # Install cyberpanel core database in case you deleted it
 ```
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/restore_cyberpanel_database.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/restore_cyberpanel_database.sh)
+```
+
+
+
+
+
+
+
+
+______________________________
+# ALPHA! NEEDS PROPER TESTING! USE AT YOUR OWN RISK!
+
+## Cyberpanel core permissions fix
+
+Run in case you messed your cyberpanel permissions. 
+```
+sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_permissions.sh)
 ```
