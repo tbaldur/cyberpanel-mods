@@ -23,16 +23,8 @@ _____________________________
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/restore_cyberpanel_database.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/restore_cyberpanel_database.sh)
 ```
 
-
-
-
-
-
-
-
 ______________________________
-# ALPHA! NEEDS PROPER TESTING! USE AT YOUR OWN RISK!
-
+# ALPHA FEATURES BELLOW! NEEDS PROPER TESTING! USE AT YOUR OWN RISK!
 ## Cyberpanel core permissions fix
 
 Run in case you messed your cyberpanel permissions. 
