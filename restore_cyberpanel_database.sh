@@ -15,3 +15,8 @@ rm -f cyberpanel.sql
 
 #Restart cyberpanel
 systemctl restart lscpd
+
+#Generate new random cyberpanel password
+newPassword=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 18 | head -n 1)
+adminPass $newPassword
+echo "Your cyberpanel password is: $newPassword"
