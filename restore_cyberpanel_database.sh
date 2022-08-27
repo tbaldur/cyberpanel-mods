@@ -12,3 +12,6 @@ mysql -u root -p"$mysql_password" cyberpanel < cyberpanel.sql
 
 #Deletes cyberpanel.sql
 rm -f cyberpanel.sql
+
+#Restart cyberpanel
+systemctl restart lscpd
