@@ -3,13 +3,24 @@ Small changes to cyberpanel core installation
 
 phpMyAdmin + Snappymail version changer. Enter php version without "."
 
-For php8.1 write choose "81" in the script.
+# For php8.1 write choose "81" in the script.
 ```
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/phpmod.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/phpmod.sh)
 ```
 ![](https://community.cyberpanel.net/uploads/default/original/2X/0/00feaa708386036ce807b7d7b67c57230f2dfe45.png)
 
 ______________________________
+
+# Snappymail version changer
+Input version you want to change to e.g 2.18.2
+```
+sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/snappymail_v_changer.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/snappymail_v_changer.sh)
+```
+![imagem](https://user-images.githubusercontent.com/97204751/192609788-355a24ec-e0cf-407a-91b7-51bb4121e5f4.png)
+
+
+______________________________
+
 # Fix missing acme-challenge context on all vhosts config
 ```
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh)
