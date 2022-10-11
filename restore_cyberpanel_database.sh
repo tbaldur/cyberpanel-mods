@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ## Download prototype cyberpanel database
 (curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/cyberpanel.sql -o cyberpanel.sql || wget -q https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/cyberpanel.sql)
 #Read mysql password

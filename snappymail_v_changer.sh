@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #Asks for snappy version
 echo "What version of snappymail you want to use? (e.g 2.18.2) "
