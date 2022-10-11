@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Default PHP version changer for cyberpanel apps"
 echo "Version chosen here will be used for phpmyadmin / snappymail"
 echo ""

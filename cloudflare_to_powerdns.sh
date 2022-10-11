@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # TODO: Add arguments option to api_key, domain and domain_names so you don't need to edit the file
 api_key=qwerty1234567890asdfg
 email=email@domain.tld
