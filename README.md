@@ -29,6 +29,14 @@ sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl
 ![imagem](https://user-images.githubusercontent.com/97204751/186309709-30e11069-4833-4d05-b118-d7ba55960b56.png)
 
 _____________________________
+# Remove two-step authentification when you lost it
+```
+sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/disable_2fa.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/disable_2fa.sh)
+```
+
+![imagem](https://user-images.githubusercontent.com/97204751/186309709-30e11069-4833-4d05-b118-d7ba55960b56.png)
+
+_____________________________
 # Install cyberpanel core database in case you deleted it
 ```
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/restore_cyberpanel_database.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/restore_cyberpanel_database.sh)
