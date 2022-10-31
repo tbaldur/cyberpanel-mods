@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+### BEGIN INIT INFO
+# Provides:          lsmcd
+# Required-Start:    $local_fs $remote_fs $network
+# Required-Stop:     $local_fs $remote_fs $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: lsmcd
+# Description:       LiteSpeed Memcache Compatible Persistent HA replication Cache Server.
+### END INIT INFO
+#
+# Startup script for the lsmcd
+#
+# chkconfig: - 95 25
+# description: LiteSpeed Memcache Compatible Persistent HA replication Cache Server 
+# processname: lsmcd
+
+LSMCD_CTRL="/usr/local/lsmcd/bin/lsmcdctrl"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+ret=0
+
+OK="\t\t\t\t[\t${GREEN}OK${NC}\t]"
+ERR="\t\t\t\t[\t${RED}ERROR${NC}\t]"
+case "$1" in
+    start)
+        "$LSMCD_CTRL" start 2>/dev/null 1>&2
+        ret=$?
+        if [ $ret -eq 0 ]; then
+            printf "start lsmcd ${OK}\n";
+        else
+            printf "start lsmcd ${ERR}\n";
+        fi
+        ;;
+
+    stop)
+        "$LSMCD_CTRL" stop 2>/dev/null 1>&2
+        ret=$?
+        if [ $ret -eq 0 ]; then
+            printf "stop lsmcd ${OK}\n";
+        else
+            printf "stop lsmcd ${ERR}\n";
+        fi
+
+        ;;
+    restart)
+        "$LSMCD_CTRL" restart 2>/dev/null 1>&2
+        ret=$?
+        if [ $ret -eq 0 ]; then
+            printf "restart lsmcd ${OK}\n";
+        else
+            printf "restart lsmcd ${ERR}\n";
+        fi
+
+        ;;
+    status)
+        "$LSMCD_CTRL" status
+        ret=$?
+        ;;
+    *)
+    echo $"Usage: $PROG {start|stop|restart|status|help}"
+    cat <<EOF
+
+start    - start lsmcd
+stop     - stop lsmcd
+restart  - restart (stop then start) lsmcd
+status   - show service status
+help     - this screen
+        
+EOF
+
+        ret=2
+        ;;
+esac
+exit $ret
