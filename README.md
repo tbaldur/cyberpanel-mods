@@ -20,7 +20,16 @@ sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/snappym
 
 
 ______________________________
+# phpMyAdmin version changer
+Input version you want to change to e.g 5.2.0
+```
+sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/phpmyadmin_v_changer.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/phpmyadmin_v_changer.sh)
+```
+![imagem](https://user-images.githubusercontent.com/97204751/208486782-a0205d4f-8698-4cdb-bad1-9f47e19bf5ba.png)
 
+
+
+______________________________
 # Fix missing acme-challenge context on all vhosts config
 ```
 sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/fix_ssl_missing_context.sh)
