@@ -29,14 +29,17 @@ mv -f /usr/local/CyberCP/public/phpmyadmin/phpmyadminsignin.php /tmp/phpmyadmins
 rm -rf /usr/local/CyberCP/public/phpmyadmin/
 mkdir -p /usr/local/CyberCP/public/phpmyadmin
 ##Extract
-tar xzvf phpMyAdmin-$PHPMYADMIN_VERSION-all-languages.tar.gz -C /usr/local/CyberCP/public/phpmyadmin/
+tar xzvf phpMyAdmin-$PHPMYADMIN_VERSION-all-languages.tar.gz -C /usr/local/CyberCP/public/phpmyadmin/ --strip-components=1
 ##Delete tmp
 rm -rf phpMyAdmin-$PHPMYADMIN_VERSION-all-languages.tar.gz
 ##Move auto-login configs from tmp to final destination
 mv -f /tmp/config.inc.php /usr/local/CyberCP/public/phpmyadmin/config.inc.php
 mv -f /tmp/phpmyadminsignin.php /usr/local/CyberCP/public/phpmyadmin/phpmyadminsignin.php
 ##Fix permissions just in case
-cd /usr/local/CyberCP/public/phpmyadmin/tmp &&
+if [[ ! -d /usr/local/CyberCP/public/phpmyadmin/tmp/ ]]; then
+    mkdir -p /usr/local/CyberCP/public/phpmyadmin/tmp/
+fi
+cd /usr/local/CyberCP/public/phpmyadmin/ &&
 find . -type d -exec chmod 755 {} \; &&
 find . -type f -exec chmod 644 {} \; &&
 chown -R lscpd:lscpd /usr/local/CyberCP/public/phpmyadmin/tmp
