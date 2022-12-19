@@ -8,9 +8,7 @@ read PHPMYADMIN_VERSION
 if [[ ! -d /usr/local/CyberCP/public ]]; then
     mkdir -p /usr/local/CyberCP/public
 fi
-if [[ ! -d /usr/local/CyberCP/public/phpmyadmin ]]; then
-    mkdir -p /usr/local/CyberCP/public/phpmyadmin
-fi
+
 
 #Update phpmyadmin to provided version
 ##Download
@@ -28,7 +26,8 @@ fi
 mv -f /usr/local/CyberCP/public/phpmyadmin/config.inc.php /tmp/config.inc.php
 mv -f /usr/local/CyberCP/public/phpmyadmin/phpmyadminsignin.php /tmp/phpmyadminsignin.php
 ##Delete old version
-rm -rf /usr/local/CyberCP/public/phpmyadmin
+rm -rf /usr/local/CyberCP/public/phpmyadmin/
+mkdir -p /usr/local/CyberCP/public/phpmyadmin
 ##Extract
 tar xzvf phpMyAdmin-$PHPMYADMIN_VERSION-all-languages.tar.gz -C /usr/local/CyberCP/public/phpmyadmin/
 ##Delete tmp
