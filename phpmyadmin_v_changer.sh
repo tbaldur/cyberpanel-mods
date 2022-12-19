@@ -36,9 +36,7 @@ rm -rf phpMyAdmin-$PHPMYADMIN_VERSION-all-languages.tar.gz
 mv -f /tmp/config.inc.php /usr/local/CyberCP/public/phpmyadmin/config.inc.php
 mv -f /tmp/phpmyadminsignin.php /usr/local/CyberCP/public/phpmyadmin/phpmyadminsignin.php
 ##Fix permissions just in case
-if [[ ! -d /usr/local/CyberCP/public/phpmyadmin/tmp/ ]]; then
-    mkdir -p /usr/local/CyberCP/public/phpmyadmin/tmp/
-fi
+mkdir -p /usr/local/CyberCP/public/phpmyadmin/tmp/twig
 cd /usr/local/CyberCP/public/phpmyadmin/ &&
 find . -type d -exec chmod 755 {} \; &&
 find . -type f -exec chmod 644 {} \; &&
