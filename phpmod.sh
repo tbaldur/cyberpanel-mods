@@ -17,6 +17,7 @@ install_php_version() {
 link_php_version() {
   rm -f /usr/local/lscp/fcgi-bin/lsphp &&
   ln -s /usr/local/lsws/lsphp$1/bin/lsphp /usr/local/lscp/fcgi-bin/lsphp
+  systemctl restart lscpd || service lscpd restart
   echo "Changed default version to $Input_Number"
 }
 
