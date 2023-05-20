@@ -36,7 +36,7 @@ case "$Input_Number" in
   74) change_php_version 74 "7.4" ;;
   80) change_php_version 80 "8.0" ;;
   81) change_php_version 81 "8.1" ;;
-  82) change_php_version 82 "8.1" ;;
+  82) change_php_version 82 "8.2" ;;
   *)
     echo -e "Please write PHP version in the following format [71-72-73-74-80-81-82]\n"
     exit 1
