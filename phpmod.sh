@@ -8,7 +8,7 @@ read -r -p "Choose one of the following php versions [71-72-73-74-80-81-82]: " I
 echo ""
 
 install_php_version() {
-  if ! (yum -y install lsphp$1 2> /dev/null || apt-get install -y lsphp$1 2> /dev/null); then
+  if ! (yum -y install lsphp$1* 2> /dev/null || apt-get install -y lsphp$1* 2> /dev/null); then
     echo "Failed to install PHP $1. Package may not exist or package manager (yum/apt-get) may not be available."
     exit 1
   fi
