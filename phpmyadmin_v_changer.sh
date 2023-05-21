@@ -1,14 +1,19 @@
 #!/bin/bash
+set -e
 
 # Asks for phpMyAdmin version
-echo "What version of phpMyAdmin do you want to use? (e.g., 5.2.0)"
-read phpmyadmin_version
+read -p "What version of phpMyAdmin do you want to use? (e.g., 5.2.1): " phpmyadmin_version
+
+# Define constants
+dest_dir=/usr/local/CyberCP/public/phpmyadmin
+temp_dir=/tmp
+download_url="https://files.phpmyadmin.net/phpMyAdmin/$phpmyadmin_version/phpMyAdmin-$phpmyadmin_version-all-languages.tar.gz"
 
 # Create folder if it doesn't exist
-mkdir -p /usr/local/CyberCP/public
+mkdir -p $dest_dir
 
-# Update phpMyAdmin to the provided version
-if ! wget -q "https://files.phpmyadmin.net/phpMyAdmin/$phpmyadmin_version/phpMyAdmin-$phpmyadmin_version-all-languages.tar.gz"; then
+# Download phpMyAdmin archive
+if ! wget -q -O $temp_dir/phpmyadmin.tar.gz $download_url; then
     echo "Unable to download version $phpmyadmin_version"
     echo "Please check if you entered the correct version."
     echo "You can find available versions at: https://www.phpmyadmin.net/downloads/"
@@ -16,29 +21,29 @@ if ! wget -q "https://files.phpmyadmin.net/phpMyAdmin/$phpmyadmin_version/phpMyA
 fi
 
 # Move auto-login configs to tmp
-mv -f /usr/local/CyberCP/public/phpmyadmin/config.inc.php /tmp/config.inc.php
-mv -f /usr/local/CyberCP/public/phpmyadmin/phpmyadminsignin.php /tmp/phpmyadminsignin.php
+mv -f $dest_dir/config.inc.php $temp_dir
+mv -f $dest_dir/phpmyadminsignin.php $temp_dir
 
 # Delete old version
-rm -rf /usr/local/CyberCP/public/phpmyadmin/
-mkdir -p /usr/local/CyberCP/public/phpmyadmin
+rm -rf $dest_dir
+mkdir -p $dest_dir
 
 # Extract new version
-tar -xzf phpMyAdmin-$phpmyadmin_version-all-languages.tar.gz -C /usr/local/CyberCP/public/phpmyadmin/ --strip-components=1
+tar -xzf $temp_dir/phpmyadmin.tar.gz -C $dest_dir --strip-components=1
 
 # Delete downloaded tar file
-rm -rf phpMyAdmin-$phpmyadmin_version-all-languages.tar.gz
+rm -f $temp_dir/phpmyadmin.tar.gz
 
 # Move auto-login configs from tmp to final destination
-mv -f /tmp/config.inc.php /usr/local/CyberCP/public/phpmyadmin/config.inc.php
-mv -f /tmp/phpmyadminsignin.php /usr/local/CyberCP/public/phpmyadmin/phpmyadminsignin.php
+mv -f $temp_dir/config.inc.php $dest_dir/config.inc.php
+mv -f $temp_dir/phpmyadminsignin.php $dest_dir/phpmyadminsignin.php
 
 # Fix permissions
-mkdir -p /usr/local/CyberCP/public/phpmyadmin/tmp/twig
-cd /usr/local/CyberCP/public/phpmyadmin/ &&
+mkdir -p $dest_dir/tmp/twig
+cd $dest_dir &&
 find . -type d -exec chmod 755 {} \; &&
 find . -type f -exec chmod 644 {} \; &&
-chown -R lscpd:lscpd /usr/local/CyberCP/public/phpmyadmin/tmp
+chown -R lscpd:lscpd $dest_dir/tmp
 
 echo ""
 echo "phpMyAdmin changed to version $phpmyadmin_version"
