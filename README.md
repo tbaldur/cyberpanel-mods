@@ -12,7 +12,7 @@ ______________________________
 # OWSAP modsecurity rules version changer
 Input version you want to change to e.g 3.3.4
 ```
-sh <(curl https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/modsec_rules_v_changer.sh || wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/modsec_rules_v_changer.sh)
+bash <(curl -s https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/modsec_rules_v_changer.sh) || bash <(wget -O - https://raw.githubusercontent.com/tbaldur/cyberpanel-mods/main/modsec_rules_v_changer.sh) 
 ```
 ![imagem](https://github.com/tbaldur/cyberpanel-mods/assets/97204751/a94ab169-6333-40ab-9e11-8632b38aba90)
 
