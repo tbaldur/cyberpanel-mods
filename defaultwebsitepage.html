@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<title>Coming Soon</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>.wrapper,body,html{height:100%;padding:0;margin:0;font:1rem/1.516 Montserrat,Arial,sans-serif;color:#fff}.wrapper{background:url(https://picsum.photos/id/896/1920/1080) no-repeat center center/cover;display:flex;align-items:center;justify-content:center}.content{text-align:center;max-width:80%}.content h1{margin-top:0}.countdown{display:grid;font-size:28px;font-weight:500;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;justify-items:center}.countdown>div{background-color:#00000050;border-radius:70% 30% 30% 70%/60% 40% 60% 40%;height:150px;width:150px;display:flex;align-items:center;justify-content:center}.countdown span{position:relative;display:block;font-size:16px;text-align:center}.countdown span:before{content:"";position:absolute;top:-2px;right:0;left:0;margin-right:auto;margin-left:auto;width:20px;height:1px;background:#fff}@media only screen and (max-width:768px){.countdown{grid-template-columns:1fr 1fr}}</style>
+</head>
+<body>
+<div class=wrapper>
+<main class=content>
+<h1>COMING SOON!</h1>
+<div class=countdown>
+<div class=countdowndays>
+<div class=countdowninner>
+<div class=number></div>
+<span>Days</span>
+</div>
+</div>
+<div class=countdownhours>
+<div class=countdowninner>
+<div class=number></div>
+<span>Hours</span>
+</div>
+</div>
+<div class=countdownminutes>
+<div class=countdowninner>
+<div class=number></div>
+<span>Minutes</span>
+</div>
+</div>
+<div class=countdownseconds>
+<div class=countdowninner>
+<div class=number></div>
+<span>Seconds</span>
+</div>
+</div>
+</div>
+<p>Our website is under construction. We'll be here soon with our new awesome site.</p>
+</main>
+</div>
+<script>(()=>{let e=new Date((new Date).getFullYear(),11,31,23,59,59),n=document.querySelector(".countdowndays .number"),o=document.querySelector(".countdownhours .number"),t=document.querySelector(".countdownminutes .number"),r=document.querySelector(".countdownseconds .number");setInterval((()=>{let u=(new Date).getTime(),c=e-u,l=Math.floor(c/864e5),a=Math.floor(c%864e5/36e5),d=Math.floor(c%36e5/6e4),m=Math.floor(c%6e4/1e3);n.innerHTML=l,o.innerHTML=a,t.innerHTML=d,r.innerHTML=m}),1e3)})()</script>
+</body>
+</html>
